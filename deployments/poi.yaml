@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: userprofile-deployment
+  name: poi-deployment
   labels:
-    app: userprofile
+    app: poi
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: userprofile
+      app: poi
   template:
     metadata:
       labels:
-        app: userprofile
+        app: poi
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
       containers:
-      - name: userprofile
-        image: registrywxo9975.azurecr.io/tripinsights/userprofile:latest
+      - name: poi
+        image: registrywxo9975.azurecr.io/tripinsights/poi:latest
         env:
         - name: SQL_SERVER
           valueFrom:
