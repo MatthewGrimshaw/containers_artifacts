@@ -20,6 +20,10 @@ spec:
       - name: userprofile
         image: registrywxo9975.azurecr.io/tripinsights/tripviewer:latest
         env:
+        - name: TRIPS_API_ENDPOINT
+          value: http://trips-service.api:32023
+        - name: USERPROFILE_API_ENDPOINT
+          value: http://userprofile-service.api:32013
         - name: SQL_SERVER
           valueFrom:
             secretKeyRef:
